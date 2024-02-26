@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+.container {
+	box-sizing: border-box;
+	background-color: #000;
+	color: #09f09c;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	font-family: "Kode Mono", monospace;
+}
+.container * {
+	box-sizing: border-box;
+}
+
+.container a {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+}
+.container h2 {
+	text-transform: uppercase;
+}
+
+.header {
+	padding: 4rem 2rem;
+}
+
+.btn {
+	border: 1px solid #09f09c;
+	background: #000;
+	color: #09f09c;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.25);
+	transition: all 0.5s ease;
+	margin: 3rem auto 0;
+	cursor: pointer;
+	max-width: 250px;
+	width: 80%;
+}
+.footer {
+	border-top: 1px solid rgba(9, 240, 156, 0.5);
+	text-align: right;
+	padding: 1rem;
+	margin: 3rem auto;
+	font-size: 0.9rem;
+}
+
+.itemList {
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0 2rem;
+	display: grid;
+	justify-content: center;
+	align-items: start;
+	gap: 0.5rem;
+	width: 100%;
+	align-content: center;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	animation: appearing 1s ease-in-out;
+}
+
+.itemList li {
+	list-style: none;
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	width: auto;
+	min-height: 400px;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 2px rgba(9, 240, 156, 0.5);
+	background: #000;
+	transition: all 0.5s ease;
+}
+
+.itemList li a {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.thumbnail {
+	border-radius: 0.5rem;
+	overflow: hidden;
+	max-height: 222px;
+}
+
+.thumbnail img {
+	width: 100%;
+	transition: all 0.5s ease-in-out;
+}
+
+.itemList li:hover {
+	animation: floating 0.5s ease-in-out forwards;
+}
+.itemList li:hover img {
+	transform: scale(1.2);
+}
+.itemList li:hover h2 {
+	color: #fff;
+}
+
+.detail {
+	padding: 4rem 2rem;
+	text-align: center;
+	width: 100%;
+}
+
+.detail ul,
+.detail h3 {
+	text-align: left;
+}
+.detail__thumb {
+	margin: 1rem auto;
+	width: 100%;
+	max-width: 450px;
+	border-radius: 1rem;
+	opacity: 0;
+	animation: appearing 1s ease-in-out forwards;
+}
+.detail__thumb img {
+	width: 100%;
+	border-radius: 1rem;
+	box-shadow: 0 0 10px rgba(9, 240, 156, 0.5);
+}
+.detail__info {
+	border: 1px solid;
+	border-radius: 1rem;
+	padding: 1rem;
+	margin: 1rem auto;
+	max-width: 1440px;
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+	opacity: 0;
+	animation: appearing 1s ease-in-out forwards;
+	animation-delay: 1s;
+}
+
+.detail__info li {
+	list-style: decimal-leading-zero;
+}
+
+.detail__info li:hover {
+	background-color: #09f09c;
+	color: #000;
+}
+
+@keyframes floating {
+	0% {
+		transform: translate(0, 0px);
+		box-shadow: 0 0 5px rgba(9, 240, 156, 0.5);
+	}
+	100% {
+		transform: translate(0, -15px);
+		box-shadow: 0 0 15px rgba(9, 240, 156, 1);
+	}
+}
+@keyframes appearing {
+	0% {
+		opacity: 0;
+		transform: translateY(2.5rem);
+	}
+	100% {
+		opacity: 1;
+		transform: trnaslateY(0);
+	}
+}
